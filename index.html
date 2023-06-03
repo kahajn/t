@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>내 홈페이지</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <style>
+        h1 a {
+            text-decoration: none;
+            color: black;
+        }
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            
         }
 
         nav {
@@ -18,29 +23,32 @@
             padding: 10px;
         }
 
-            nav ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+            nav ul li a:hover {
+                background-color: lightslategrey
             }
 
-                nav ul li {
-                    display: inline-block;
-                    margin: 0 10px;
-                }
-
-                    nav ul li a {
-                        text-decoration: none;
-                        font-weight: bold;
-                        color: black;
-                        padding: 5px;
-                        border-radius: 5px;
-                    }
-
-                        nav ul li a.active {
-                            background-color: black;
-                            color: white;
-                        }
+            nav ul li a.active {
+                background-color: black;
+                color: white;
+            }
 
         section {
             display: none;
@@ -48,67 +56,164 @@
             background-color: lightgray;
             padding: 10px;
             margin-bottom: 10px;
+            margin-top: 40px;
+            border-radius: 5px;
         }
 
-            section.active {
-                display: block;
+        section.active {
+            display: block;
+            border-radius: 5px;
+         }
+
+        footer {
+            background-color: lightgray;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+
+        }
+
+        
+        
+
+        @media(min-width: 768px){
+            .about-img {
+                float: left;
+                margin-right: 20px;
             }
+
+            .about-content {
+                overflow: hidden;
+            }
+
+                .about-content p {
+                    margin: 0;
+                }
+        }
     </style>
 </head>
 <body>
+    <h1 onclick="goToHome()"><a href="#home">HANJUN KANG</a></h1>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">홈</a></li>
-                <li><a href="#about">자기 소개</a></li>
-                <li><a href="#projects">프로젝트</a></li>
-                <li><a href="#contact">연락처</a></li>
+                <li><a href="#home">홈 </a></li>
+                <li><a href="#about"> 자기 소개 </a></li>
+                <li><a href="#interest1"> METAVERSE·VR </a></li>
+                <li><a href="#interest2"> AI </a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="active">
-            <h1>환영합니다!</h1>
+            <h1 class="section-title">환영합니다!</h1>
             <p>안녕하세요! 제 홈페이지에 오신 것을 환영합니다.</p>
+            <footer>
+                이메일 주소: <a href="kahajn@kangwon.ac.kr">kahajn@kangwon.ac.kr</a>
+            </footer>
         </section>
 
         <section id="about">
-            <h1>자기 소개</h1>
-            <p>안녕하세요! 저는 [이름]입니다. [자기 소개 내용]</p>
+
+            <h1 class="section-title">자기 소개</h1>
+            <div class="about-img">
+                <img src="face.png" height="260" width="300" alt="프로필 사진">
+            </div>
+            <div class="about-content">
+                <p>
+                    이름: 강한준(Kang Han-jun)<br />
+                    출생: 2003년 08월 생 강원도 강릉시<br />
+                    국적: 대한민국<br />
+                    가족: 아버지, 어머니, 여동생<br />
+                    MBTI: INTJ (ISTJ도 가끔 나온다.)<br />
+                    </p>
+            </div>
+                <p>
+                    개요: 강원도 강릉시 출신으로 강원대학교 컴퓨터공학과를 다니고 있는 학생으로 강릉 명륜 고등학교를 졸업하고 강원대에 입학했다.<br />
+                    학교 생활: 중학교때 부터 컴퓨터에 대한 관심이 많았고 고등학교때도 수학과 과학등 이과과목을 잘하여 대입을 할때 수시로 대입을
+                    준비를 했는데 6개 전부다 컴퓨터 관련 학과를 지원했다. 1학년떄 무난한 생활을 했고 성적은 무난히 나왔다. 지금은 웹 프로그래밍부터
+                    리눅스, 파이썬, 자료구조, 논리 회로등 컴퓨터 관련으로 다양한 과목을 배우고 있다.<br />
+                    여담 ▼
+                    <ul>
+                        <li>이 자기 소개는 본인을 객관적으로 본 동시에 주관적 의견을 넣어서 3인칭 형식으로 만들었다. 마치 타인이 자기소개를 쓴것 같은 느낌이 들게 만든것이다.</li> 
+                        
+                        <li>
+                            은근 MBTI를 믿는 편이다. MBTI 설명이 본인과 매우 잘 맞다고 생각한다. 옛날에는 드론에도 관심있었다.
+                            그래서 컴퓨터 공학과에 들어오기 전에는 프로그래밍을 배워서 드론을 설계하고 싶다는 생각도 했었다고 한다.
+                        </li>   
+                       
+                        <li>
+                            취업에 대한 고민이 매우 많다. 사실 2학년이 뭔 취업이냐고 할 수 있겠지만 군대를 갔다가 오면 3학년이고 거의 2년, 3년안에 졸업 준비하고
+                            취업을 해야 한다는 생각에 고민이 매우 많다고.
+                        </li>
+                        
+                        <li>고등학교 1학년때 회계사를 준비해볼까 라는 생각도 했지만 사회를 못해서 포기했다고 한다.</li>
+                        
+                        <li>
+                            현재 메타버스와, vr, 인공지능에 대해 매우 관심이 있다. 옛날에는 메타버스에 대해 회의적이였다. 사람들이 막 설명하고 이게 미래다
+                            하면서 설명하는 모든 것들이 이미 다양한 게임에 구현이 되어있어서 지금도 존재하는 것들을 전문적 용어들로 부풀려서 사기를 치는 것 같다
+                            라고 생각을 했었다. 지금은 메타버스에서는 왁타버스에 대해 매우 관심이 있고 인공지능 쪽에서는 ai 그림 생성기와 동영상, 노래에 대해 메우
+                            관심이 있다. 자세한건 관심사에서.
+                        </li>
+                        
+                        <li>코로나에 걸리고 엄청 고생했다. 그 뒤로 건강에 대해 관심이 많아져서 복수전공으로 정밀의료융합학과를 신청했다.</li>
+                    </ul>
+                </p>
+            
+
+                <footer>
+                    이메일 주소: <a href="kahajn@kangwon.ac.kr">kahajn@kangwon.ac.kr</a>
+                </footer>
         </section>
 
-        <section id="projects">
-            <h1>프로젝트</h1>
-            <!-- 프로젝트 내용 추가 -->
+        <section id="interest1">
+            <h1 class="section-title">METAVERSE·VR</h1>
+            <p>
+
+            </p>
         </section>
 
-        <section id="contact">
-            <h1>연락처</h1>
-            <!-- 연락처 내용 추가 -->
+        <section id="interest2">
+            <h1 class="section-title">AI</h1>
+           
         </section>
     </main>
 
+    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
+        function goToHome() {
+            $('nav a').removeClass('active');
+            $('section').removeClass('active');
+            $('#home').addClass('active');
+           
+        }
+
+        $(document).ready(function () {
             // 네비게이션 링크 클릭 시 해당 섹션 보이기
-            $('nav ul li a').click(function(e) {
-                e.preventDefault();
-                var target = $(this).attr('href');
+            $('nav a').click(function (event) {
+                event.preventDefault();
+                var targetSection = $($(this).attr('href'));
                 $('section').removeClass('active');
-                $(target).addClass('active');
-                $('nav ul li a').removeClass('active');
+                targetSection.addClass('active');
+
+                $('nav a').removeClass('active');
                 $(this).addClass('active');
-                window.location.hash = target.substr(1);
+
+                window.location.hash = $(this).attr('href')
             });
 
-            // URL의 해시값에 해당하는 섹션 보이기
-            var hash = window.location.hash;
-            if (hash) {
-                $(hash).addClass('active');
-                $('nav ul li a[href="' + hash + '"]').addClass('active');
-            }
+            // 섹션 제목 클릭 시 해당 본문 보이기
+            $('.section-title').click(function () {
+                $(this).toggleClass('active');
+                $(this).siblings().slideToggle();
+            });
         });
     </script>
 </body>
